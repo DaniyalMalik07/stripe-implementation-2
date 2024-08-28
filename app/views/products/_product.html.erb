@@ -9,4 +9,8 @@
     <%= product.price %>
   </p>
 
+  <p>
+    <strong>Payment:</strong>
+    <%= button_to 'Buy Now', checkout_index_path, params: { product_id: product.id }, method: :post, data: { turbo: false } %>
+  </p>
 </div>
