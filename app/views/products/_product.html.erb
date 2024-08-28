@@ -6,11 +6,15 @@
 
   <p>
     <strong>Price:</strong>
-    <%= product.price %>
+    <%= number_to_currency(product.price / 100) %>
   </p>
 
   <p>
-    <strong>Payment:</strong>
+    <strong>Sales Count:</strong>
+    <%= product.sales_count %>
+  </p>
+
+  <p>
     <%= button_to 'Buy Now', checkout_index_path, params: { product_id: product.id }, method: :post, data: { turbo: false } %>
   </p>
 </div>
